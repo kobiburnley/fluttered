@@ -2,7 +2,6 @@ version: 2
 jobs:
   test:
     docker:
-    - image: circleci/android:api-25-alpha
     - image: circleci/node:8.12.0
     steps:
     - checkout
@@ -11,9 +10,6 @@ jobs:
         command: |
           wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.5.1-beta.tar.xz
           tar xf flutter_linux_v0.5.1-beta.tar.xz
-
-          wget https://nodejs.org/dist/v10.13.0/node-v10.13.0-linux-x64.tar.xz
-          tar xf node-v10.13.0-linux-x64.tar.xz
 
           npm i -g multi-package-dart
           multi-package-dart generate --env ci --config config/multi-package/config.ci.json
