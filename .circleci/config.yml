@@ -17,7 +17,7 @@ jobs:
           wget https://registry.npmjs.org/multi-package-dart/-/multi-package-dart-1.0.5.tgz
           tar xf multi-package-dart-1.0.5.tgz
 
-          cd package && npm install
+          cd package && ./node-v10.13.0-linux-x64/bin/npm install --production
           ./node-v10.13.0-linux-x64/bin/node package/lib/main.js generate --env ci --config config/multi-package/config.ci.json
           cat pubspec.yaml
     - run:
