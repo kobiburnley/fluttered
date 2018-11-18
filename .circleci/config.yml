@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  test:
+    docker:
+    - image: circleci/android:api-25-alpha
+    - image: circleci/node
+    steps:
+    - checkout
+    - run:
+        name: Dart
+        command: |
+          wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.5.1-beta.tar.xz
+          tar xf flutter_linux_v0.5.1-beta.tar.xz
+          npm i multi-package-dart
+          multi-package-dart generate --env ci --config config/multi-package/config.ci.json
+    - run:
+        name: Test
+        command: |
+          ./flutter/bin/cache/dart-sdk/bin/dartanalyzer {lib,example}/*.dart
+          ./flutter/bin/cache/dart-sdk/bin/pub run test
+workflows:
+  version: 2
+  release:
+    jobs:
+    - test

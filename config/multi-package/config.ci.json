@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "dartla_util": {
+      "ci": {
+        "git": {
+          "url": "git://github.com/kobiburnley/dartla-util.git"
+        }
+      }
+    },
+    "action_tree_flutter": {
+      "ci": {
+        "git": {
+          "url": "git://github.com/kobiburnley/action-tree.git",
+          "path": "action_tree_core"
+        }
+      }
+    }
+  }
+}
