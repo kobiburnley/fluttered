@@ -14,8 +14,8 @@ jobs:
           wget https://nodejs.org/dist/v10.13.0/node-v10.13.0-linux-x64.tar.xz
           tar xf node-v10.13.0-linux-x64.tar.xz
 
-          wget https://registry.npmjs.org/multi-package-dart/-/multi-package-dart-1.0.4.tgz
-          tar xf multi-package-dart-1.0.4.tgz
+          wget https://registry.npmjs.org/multi-package-dart/-/multi-package-dart-1.0.5.tgz
+          tar xf multi-package-dart-1.0.5.tgz
 
           ./node-v10.13.0-linux-x64/bin/node package/lib/main.js generate --env ci --config config/multi-package/config.ci.json
           cat pubspec.yaml
