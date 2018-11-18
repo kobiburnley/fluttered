@@ -13,6 +13,7 @@ jobs:
           tar xf flutter_linux_v0.5.1-beta.tar.xz
           npm i multi-package-dart
           multi-package-dart generate --env ci --config config/multi-package/config.ci.json
+          cat pubspec.yaml
     - run:
         name: Test
         command: |
