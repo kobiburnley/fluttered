@@ -15,7 +15,7 @@ jobs:
           tar xf node-v10.13.0-linux-x64.tar.xz
 
           ./node-v10.13.0-linux-x64/bin/npm i multi-package-dart
-          ./node-v10.13.0-linux-x64/bin/node node_modules/multi-package-dart/lib/index.js generate --env ci --config config/multi-package/config.ci.json
+          ./node-v10.13.0-linux-x64/bin/node node_modules/multi-package-dart/lib/main.js generate --env ci --config config/multi-package/config.ci.json
           cat pubspec.yaml
     - run:
         name: Test
