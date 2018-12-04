@@ -3,6 +3,7 @@ jobs:
   test:
     docker:
     - image: circleci/node:8.12.0
+    - image: circleci/android:api-25-alpha
     steps:
     - checkout
     - run:
@@ -23,6 +24,7 @@ jobs:
         name: Test
         command: |
           ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/*.dart
+          ./flutter/bin/flutter packages get
           ./flutter/bin/cache/dart-sdk/bin/pub run test
 workflows:
   version: 2
