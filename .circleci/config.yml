@@ -25,7 +25,6 @@ jobs:
         command: |
           ./flutter/bin/flutter packages get
           ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/*.dart
-          ./flutter/bin/cache/dart-sdk/bin/pub run test
 workflows:
   version: 2
   release:
