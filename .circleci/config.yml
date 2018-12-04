@@ -22,7 +22,7 @@ jobs:
     - run:
         name: Test
         command: |
-          ./flutter/bin/cache/dart-sdk/bin/dartanalyzer {lib,example}/*.dart
+          ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/*.dart
           ./flutter/bin/cache/dart-sdk/bin/pub run test
 workflows:
   version: 2
