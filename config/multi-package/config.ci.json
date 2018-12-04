@@ -3,14 +3,14 @@
     "dartla_util": {
       "ci": {
         "git": {
-          "url": "git@bitbucket.org/kobiburnley/dartla-util.git"
+          "url": "git@bitbucket.org:kobiburnley/dartla-util.git"
         }
       }
     },
     "action_tree_flutter": {
       "ci": {
         "git": {
-          "url": "git@bitbucket.org/kobiburnley/action-tree.git",
+          "url": "git@bitbucket.org:kobiburnley/action-tree.git",
           "path": "action_tree_core"
         }
       }
