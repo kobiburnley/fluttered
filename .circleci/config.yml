@@ -5,6 +5,9 @@ jobs:
     - image: circleci/node:8.12.0
     - image: circleci/android:api-25-alpha
     steps:
+    - add_ssh_keys:
+        fingerprints:
+        - "a9:96:04:48:62:9f:e1:d8:88:6d:25:89:26:e4:41:40"
     - checkout
     - run:
         name: Dart
