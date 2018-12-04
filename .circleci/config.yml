@@ -9,8 +9,8 @@ jobs:
     - run:
         name: Dart
         command: |
-          wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.5.1-beta.tar.xz
-          tar xf flutter_linux_v0.5.1-beta.tar.xz
+          wget https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v1.0.0-stable.tar.xz
+          tar xf flutter_linux_v1.0.0-stable.tar.xz
 
           mkdir ~/.npm-global
           npm config set prefix '~/.npm-global'
