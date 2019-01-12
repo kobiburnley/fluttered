@@ -1,10 +1,17 @@
-
 class FetchState {
-  static FetchState loading = new FetchState();
-  static FetchState resolving = new FetchState();
-  static FetchState resolved = new FetchState();
-  static FetchState error = new FetchState();
-  static FetchState noData = new FetchState();
+  static FetchState fromIterable<T>(Iterable<T> iter) {
+    return iter.isEmpty ? FetchState.noData : FetchState.resolved;
+  }
+
+  static FetchState loading = new FetchState("loading");
+  static FetchState resolving = new FetchState("resolving");
+  static FetchState resolved = new FetchState("resolved");
+  static FetchState error = new FetchState("error");
+  static FetchState noData = new FetchState("noData");
+
+  String id;
+
+  FetchState(this.id);
 
   bool get isLoading => this == loading;
 

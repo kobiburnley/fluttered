@@ -9,12 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
   dartla_util:
-    git:
-      url: 'git@bitbucket.org:kobiburnley/dartla-util.git'
+    path: ../dartla-util
   action_tree_flutter:
-    git:
-      url: 'git@bitbucket.org:kobiburnley/action-tree.git'
-      path: action_tree_flutter
+    path: ../action-tree/action_tree_flutter
 dev_dependencies:
   flutter_test:
     sdk: flutter
