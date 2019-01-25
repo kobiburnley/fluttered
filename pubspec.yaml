@@ -11,10 +11,15 @@ dependencies:
   mobx: ^0.0.17
   flutter_mobx:
     git:
-      url: https://github.com/mobxjs/mobx.dart
+      url: 'https://github.com/mobxjs/mobx.dart'
       path: flutter_mobx
   dartla_util:
-    path: ../dartla-util
+    git:
+      url: 'git@bitbucket.org:kobiburnley/dartla-util.git'
+  action_tree_flutter:
+    git:
+      url: 'git@bitbucket.org:kobiburnley/action-tree.git'
+      path: action_tree_flutter
 dev_dependencies:
   flutter_test:
     sdk: flutter
