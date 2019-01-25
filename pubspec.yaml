@@ -8,13 +8,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  mobx: ^0.0.17
+  flutter_mobx:
+    git:
+      url: https://github.com/mobxjs/mobx.dart
+      path: flutter_mobx
   dartla_util:
-    git:
-      url: 'git@bitbucket.org:kobiburnley/dartla-util.git'
-  action_tree_flutter:
-    git:
-      url: 'git@bitbucket.org:kobiburnley/action-tree.git'
-      path: action_tree_flutter
+    path: ../dartla-util
 dev_dependencies:
   flutter_test:
     sdk: flutter
