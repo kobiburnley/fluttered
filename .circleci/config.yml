@@ -31,7 +31,7 @@ jobs:
 
           git config --global user.email circleci@circleci.com
           git config --global user.name CircleCI
-          git add 'pubspec.yaml' && (git diff-index --quiet HEAD || git commit -m 'Lock [skip ci]') && git push origin $CIRCLE_BRANCH
+          git add 'pubspec.yaml' && git diff-index --quiet HEAD && git commit -m 'Lock [skip ci]' && git push origin $CIRCLE_BRANCH
 workflows:
   version: 2
   release:
