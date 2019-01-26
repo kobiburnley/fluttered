@@ -34,7 +34,7 @@ jobs:
 
           git add 'pubspec.yaml'
           BEHIND=$(git status --untracked-files=no --porcelain)
-          if test "$BEHIND" = ""; then git commit -m 'Lock [skip ci]' && git push; fi
+          if test "$BEHIND" = ""; then echo $BEHIND; else git commit -m 'Lock [skip ci]' && git push; fi
 
 workflows:
   version: 2
