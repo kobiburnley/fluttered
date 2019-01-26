@@ -22,10 +22,10 @@ jobs:
 
           npm i -g multi-package-dart
           multi-package-dart generate --env ci --config config/multi-package/config.ci.json
-          cat pubspec.yaml
     - run:
         name: Test
         command: |
+          cat pubspec.yaml
           ./flutter/bin/flutter packages get
           ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/*.dart
 
