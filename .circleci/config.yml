@@ -31,7 +31,11 @@ jobs:
 
           git config --global user.email circleci@circleci.com
           git config --global user.name CircleCI
-          git add 'pubspec.yaml' && git status --untracked-files=no --porcelain && git commit -m 'Lock [skip ci]' && git push
+
+          git add 'pubspec.yaml'
+          BEHIND=$(git status --untracked-files=no --porcelain)
+          if test "$BEHIND" = ""; then git commit -m 'Lock [skip ci]' && git push; fi
+
 workflows:
   version: 2
   release:
