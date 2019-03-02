@@ -8,11 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mobx: ^0.0.17
-  flutter_mobx:
-    git:
-      url: 'https://github.com/mobxjs/mobx.dart'
-      path: flutter_mobx
+  mobx: ^0.1.0
+  flutter_mobx: ^0.1.0
   dartla_util:
     path: ../dartla-util
 dev_dependencies:
