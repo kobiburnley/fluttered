@@ -13,7 +13,7 @@ class Reactive extends StatefulWidget {
 
   final ReactiveContext context;
   final BuildObserved builder;
-  final VoidCallback onInvalidate;
+  final ValueChanged<bool> onInvalidate;
 
   @visibleForTesting
   Reaction createReaction(Function() onInvalidate) =>
@@ -29,7 +29,12 @@ class ReactiveState extends State<Reactive> {
   @override
   void initState() {
     super.initState();
-    _reaction = widget.createReaction(widget.onInvalidate);
+    _reaction = widget.createReaction(() {
+      widget.onInvalidate(false);
+    });
+    _reaction.track(() {
+      widget.onInvalidate(true);
+    });
   }
 
   @override

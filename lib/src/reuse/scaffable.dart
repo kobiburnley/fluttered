@@ -10,12 +10,28 @@ class Scaffable extends StatelessWidget {
 
   Widget build(BuildContext context) {
     Widget child = body;
-    if(scaff) {
+    if (scaff) {
       child = new Scaffold(
         appBar: appBar,
         body: child,
       );
     }
-    return child;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        child,
+        ButtonTheme.bar(
+          // make buttons use the appropriate styles for cards
+          child: ButtonBar(
+            children: <Widget>[
+              FlatButton(
+                child: const Text('SHOW MORE'),
+                onPressed: () {/* ... */},
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

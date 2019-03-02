@@ -6,8 +6,8 @@ class NavCtrl {
 
   NavCtrl._(this.state);
 
-  factory NavCtrl([NavState state]) {
-    return NavCtrl._(state ?? NavState());
+  factory NavCtrl(NavState state) {
+    return NavCtrl._(state);
   }
 
   void navTo(String route, [Map<String, String> data = const {}, bool inherit = false]) {

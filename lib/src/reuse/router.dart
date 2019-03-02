@@ -11,9 +11,9 @@ class Router extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Reactive(
-      onInvalidate: () {
+      onInvalidate: (firstTime) {
         WidgetBuilder builder = routes[ctrl.state.route];
-        if (builder != null) {
+        if (builder != null && !firstTime) {
           Navigator.of(context).push(MaterialPageRoute<Null>(builder: builder));
         }
       },

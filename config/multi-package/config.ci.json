@@ -3,7 +3,7 @@
     "dartla_util": {
       "ci": {
         "git": {
-          "url": "git@bitbucket.org:kobiburnley/dartla-util.git"
+          "url": "git@github.com:kobiburnley/dartla-util.git"
         }
       }
     }
