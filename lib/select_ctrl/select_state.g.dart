@@ -11,8 +11,9 @@ mixin _$SelectState<T> on SelectStateBase<T> {
     _selected.reportChanged();
   }
   T remove(Object key) {
-    super.selected.remove(key);
+    T t = super.selected.remove(key);
     _selected.reportChanged();
+    return t;
   }
   void operator []=(String key, T value) {
     super.selected[key] = value;

@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:fluttered/browse_ctrl/browse_ctrl.dart';
-import 'package:fluttered/browse_ctrl/browse_state.dart';
 import 'package:fluttered/query_result_ctrl/query_result.dart';
 import 'package:fluttered/select_browse/select_browse_state.dart';
 import 'package:fluttered/select_ctrl/select_ctrl.dart';
-import 'package:fluttered/select_ctrl/select_state.dart';
 import 'package:meta/meta.dart';
 
 class SelectBrowseCtrl<T> {

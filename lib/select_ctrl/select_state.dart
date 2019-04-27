@@ -1,4 +1,3 @@
-import 'package:fluttered/browse_ctrl/browse_state.dart';
 import 'package:meta/meta.dart';
 import 'package:mobx/mobx.dart';
 

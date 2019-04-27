@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartla_util/dartla_util.dart';
 import 'package:fluttered/fetch_state/fetchState.dart';
 import 'package:fluttered/query_result_ctrl/query_result.dart';
