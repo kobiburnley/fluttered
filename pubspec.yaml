@@ -12,7 +12,7 @@ dependencies:
   flutter_mobx: ^0.1.0
   dartla_util:
     git:
-      url: 'git@github.com:kobiburnley/dartla-util.git'
+      url: 'https://github.com/kobiburnley/dartla-util'
 dev_dependencies:
   flutter_test:
     sdk: flutter

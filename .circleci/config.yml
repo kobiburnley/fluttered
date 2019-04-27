@@ -27,12 +27,12 @@ jobs:
         command: |
           cat pubspec.yaml
           ./flutter/bin/flutter packages get
-          ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/*.dart
+          ./flutter/bin/cache/dart-sdk/bin/dartanalyzer lib/**/*.dart
 
           git config --global user.email circleci@circleci.com
           git config --global user.name CircleCI
           git add 'pubspec.yaml'
-          git diff-index --quiet --cached origin/$CIRCLE_BRANCH || (git commit -m 'Lock [skip ci]' && git push)
+          git diff-index --quiet --cached origin/$CIRCLE_BRANCH || (git commit -m 'Lock [skip ci]' && git push origin $CIRCLE_BRANCH)
 workflows:
   version: 2
   release:

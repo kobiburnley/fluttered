@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttered/src/ctrl/nav/nav.dart';
-import 'package:fluttered/src/reuse/reactive.dart';
+import 'package:fluttered/nav_ctrl/nav_ctrl.dart';
+import 'package:fluttered/reactive/reactive.dart';
 
 class Router extends StatelessWidget {
   final Map<String, WidgetBuilder> routes;
