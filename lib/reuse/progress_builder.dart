@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttered/src/state/fetchState.dart';
+import 'package:fluttered/fetch_state/fetchState.dart';
 
 class ProgressBuilder extends StatelessWidget {
   final FetchState fetchState;

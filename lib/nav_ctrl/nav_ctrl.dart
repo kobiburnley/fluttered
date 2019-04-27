@@ -1,4 +1,4 @@
-import 'package:fluttered/src/ctrl/nav/nav_state.dart';
+import 'nav_state.dart';
 import 'package:mobx/mobx.dart';
 
 class NavCtrl {
