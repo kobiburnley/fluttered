@@ -19,4 +19,12 @@ class SelectCtrl<T> {
       state[id] = t;
     }
   }
+
+  void initSelected(Iterable<T> values) {
+    state.selected = Map.fromIterable(values, key: idGetter, value: (value) => value);
+  }
+
+  void single(T value) {
+    initSelected([value]);
+  }
 }
