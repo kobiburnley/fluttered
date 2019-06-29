@@ -15,7 +15,6 @@ class SelectCtrl<T> {
     if (state.selected.containsKey(id)) {
       state.remove(id);
     } else {
-      print('check');
       state[id] = t;
     }
   }

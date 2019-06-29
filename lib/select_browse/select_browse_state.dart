@@ -8,6 +8,6 @@ class SelectBrowseState<T> {
 
   SelectBrowseState({@required this.browse, @required this.select});
 
-  SelectBrowseState.empty()
-      : this(browse: BrowseState.empty(), select: SelectState(selected: {}));
+  SelectBrowseState.empty({Map<String, T> selected = const {}})
+      : this(browse: BrowseState.empty(), select: SelectState(selected: selected));
 }

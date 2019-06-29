@@ -14,12 +14,10 @@ class SelectBrowseCtrl<T> {
   SelectBrowseCtrl(
       {@required this.state, @required this.browse, @required this.select});
 
-  factory SelectBrowseCtrl.empty(
-      {SelectBrowseState<T> state,
-      Future<QueryResult<T>> Function() fetchData,
-      String Function(T t) idGetter}) {
-    final browse =
-        BrowseCtrl<T>(state: state.browse, fetchData: fetchData);
+  factory SelectBrowseCtrl.empty({@required SelectBrowseState<T> state,
+    @required Future<QueryResult<T>> Function() fetchData,
+    @required String Function(T t) idGetter}) {
+    final browse = BrowseCtrl<T>(state: state.browse, fetchData: fetchData);
 
     final select = SelectCtrl(state: state.select, idGetter: idGetter);
 
