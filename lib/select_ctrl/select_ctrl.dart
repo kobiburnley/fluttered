@@ -1,8 +1,9 @@
 import 'package:fluttered/select_ctrl/select_state.dart';
 import 'package:meta/meta.dart';
+import 'package:mobx/mobx.dart';
 
 class SelectCtrl<T> {
-  final SelectState state;
+  final SelectState<T> state;
   final String Function(T t) idGetter;
 
   SelectCtrl({
@@ -20,10 +21,23 @@ class SelectCtrl<T> {
   }
 
   void initSelected(Iterable<T> values) {
-    state.selected = Map.fromIterable(values, key: idGetter, value: (value) => value);
+    state.selected = Map.fromIterables(values.map(idGetter), values);
   }
 
   void single(T value) {
     initSelected([value]);
+  }
+
+  void reorder(int oldIndex, int newIndex) {
+    runInAction(() {
+      if (newIndex > oldIndex) {
+        newIndex -= 1;
+      }
+      List<MapEntry<String, T>> newList = [];
+      newList.addAll(state.selected.entries.toList());
+      final item = newList.removeAt(oldIndex);
+      newList.insert(newIndex, item);
+      state.selected = Map.fromEntries(newList);
+    });
   }
 }

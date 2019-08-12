@@ -23,4 +23,11 @@ class SelectBrowseCtrl<T> {
 
     return SelectBrowseCtrl(state: state, browse: browse, select: select);
   }
+
+  void selectIndex(int index) {
+    final records = browse.state.queryResult.records;
+    if(index >= 0 && index < records.length) {
+      select.single(records.elementAt(index));
+    }
+  }
 }

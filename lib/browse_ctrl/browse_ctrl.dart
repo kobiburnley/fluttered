@@ -50,4 +50,17 @@ class BrowseCtrl<T> {
       });
     }
   }
+
+  void reorder(int oldIndex, int newIndex) {
+    runInAction(() {
+      if (newIndex > oldIndex) {
+        newIndex -= 1;
+      }
+      List<T> newList = [];
+      newList.addAll(state.queryResult.records);
+      final item = newList.removeAt(oldIndex);
+      newList.insert(newIndex, item);
+      state.queryResult.records = newList;
+    });
+  }
 }
