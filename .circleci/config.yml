@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-    - image: circleci/node:8.12.0
+    - image: circleci/node:lts
     - image: circleci/android:api-25-alpha
     steps:
     - add_ssh_keys:
@@ -12,8 +12,8 @@ jobs:
     - run:
         name: Dart
         command: |
-          wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.0.0-stable.tar.xz
-          tar xf flutter_linux_v1.0.0-stable.tar.xz
+          wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.9.1+hotfix.4-stable.tar.xz
+          tar xf flutter_linux_v1.9.1+hotfix.4-stable.tar.xz
 
           mkdir ~/.npm-global
           npm config set prefix '~/.npm-global'
