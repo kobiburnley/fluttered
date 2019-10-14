@@ -30,11 +30,10 @@ class SelectCtrl<T> {
 
   void reorder(int oldIndex, int newIndex) {
     runInAction(() {
-      if (newIndex > oldIndex) {
-        newIndex -= 1;
-      }
       List<MapEntry<String, T>> newList = [];
-      newList.addAll(state.selected.entries.toList());
+      for(final entry in state.selected.entries) {
+        newList.add(MapEntry<String, T>(entry.key, entry.value));
+      }
       final item = newList.removeAt(oldIndex);
       newList.insert(newIndex, item);
       state.selected = Map.fromEntries(newList);

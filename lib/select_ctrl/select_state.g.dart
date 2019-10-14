@@ -2,7 +2,7 @@ part of 'select_state.dart';
 
 mixin _$SelectState<T> on SelectStateBase<T> {
   Atom $selected = new Atom();
-  get selected {
+  Map<String, T> get selected {
     $selected.reportObserved();
     return super.selected;
   }

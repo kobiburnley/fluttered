@@ -31,10 +31,6 @@ class ReadOnlyTextFieldState<T> extends State<ReadOnlyTextField<T>> {
   }
 
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (context) {
-        return widget.builder(_controller, context);
-      },
-    );
+    return widget.builder(_controller, context);
   }
 }
