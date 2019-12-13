@@ -20,10 +20,10 @@ class BrowseState<T> extends browse_state.BrowseState<T> with _$BrowseState<T> {
       filters: filters
   );
 
-  BrowseState.empty()
+  BrowseState.empty({List<T> selected})
       : this(
       fetchState: FetchState.noData,
-      queryResult: QueryResult.empty(),
+      queryResult: QueryResult.fromList(selected ?? []),
       pagination: Pagination(limit: 10, page: 1),
       filters: {}
   );

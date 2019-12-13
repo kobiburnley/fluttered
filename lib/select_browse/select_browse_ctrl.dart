@@ -5,6 +5,7 @@ import 'package:fluttered/query_result_ctrl/query_result.dart';
 import 'package:fluttered/select_browse/select_browse_state.dart';
 import 'package:fluttered/select_ctrl/select_ctrl.dart';
 import 'package:meta/meta.dart';
+import 'package:mobx/mobx.dart';
 
 class SelectBrowseCtrl<T> {
   SelectBrowseState<T> state;
@@ -29,5 +30,12 @@ class SelectBrowseCtrl<T> {
     if(index >= 0 && index < records.length) {
       select.single(records.elementAt(index));
     }
+  }
+
+  void selectAndAdd(Iterable<T> items) {
+    runInAction(() {
+      state.browse.queryResult.addPageResult(QueryResult.fromList(items));
+      select.select(items);
+    });
   }
 }

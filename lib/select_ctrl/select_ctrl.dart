@@ -12,16 +12,28 @@ class SelectCtrl<T> {
   });
 
   void toggle(T t) {
-    String id = idGetter(t);
-    if (state.selected.containsKey(id)) {
-      state.remove(id);
-    } else {
-      state[id] = t;
-    }
+    runInAction(() {
+      String id = idGetter(t);
+      if (state.selected.containsKey(id)) {
+        state.remove(id);
+      } else {
+        state[id] = t;
+      }
+    });
+  }
+
+  void select(Iterable<T> items) {
+    runInAction(() {
+      final selected = state.selected.values.toList();
+      selected.addAll(items);
+      state.selected = Map.fromIterable(selected, key: (e) => idGetter(e), value: (e) => e);
+    });
   }
 
   void initSelected(Iterable<T> values) {
-    state.selected = Map.fromIterables(values.map(idGetter), values);
+    runInAction(() {
+      state.selected = Map.fromIterables(values.map(idGetter), values);
+    });
   }
 
   void single(T value) {
