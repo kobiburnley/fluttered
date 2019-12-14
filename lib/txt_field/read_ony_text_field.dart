@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fluttered/field_state/field_actions.dart';
 import 'package:fluttered/field_state/field_state.dart';
 import 'package:mobx/mobx.dart';
