@@ -22,6 +22,13 @@ class SelectCtrl<T> {
     });
   }
 
+  void selectOne(T t) {
+    runInAction(() {
+      String id = idGetter(t);
+      state[id] = t;
+    });
+  }
+
   void select(Iterable<T> items) {
     runInAction(() {
       final selected = state.selected.values.toList();

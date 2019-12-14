@@ -31,11 +31,4 @@ class SelectBrowseCtrl<T> {
       select.single(records.elementAt(index));
     }
   }
-
-  void selectAndAdd(Iterable<T> items) {
-    runInAction(() {
-      state.browse.queryResult.addPageResult(QueryResult.fromList(items));
-      select.select(items);
-    });
-  }
 }
