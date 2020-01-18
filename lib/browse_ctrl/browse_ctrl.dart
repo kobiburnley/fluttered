@@ -15,11 +15,11 @@ class BrowseCtrl<T> {
 
   BrowseCtrl({@required this.state, @required this.fetchData});
 
-  void refresh() {
+  Future<Null> refresh() async {
     runInAction(() {
       state.reset();
     });
-    load();
+    await load();
   }
 
   void search(String term) {
@@ -32,7 +32,7 @@ class BrowseCtrl<T> {
     load();
   }
 
-  void load() async {
+  Future<Null> load() async {
     runInAction(() {
       state.fetchState = FetchState.loading;
     });

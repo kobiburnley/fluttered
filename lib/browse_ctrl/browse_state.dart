@@ -27,4 +27,6 @@ class BrowseState<T> extends browse_state.BrowseState<T> with _$BrowseState<T> {
       pagination: Pagination(limit: 10, page: 1),
       filters: {}
   );
+  
+  bool get isEmpty => queryResult.records.isEmpty;
 }

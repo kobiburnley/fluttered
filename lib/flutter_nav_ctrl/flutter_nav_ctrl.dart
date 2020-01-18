@@ -10,20 +10,26 @@ class FlutterNavCtrl implements StackNav {
 
   FlutterNavCtrl(this.navigatorState, this.routes);
 
-  Route<T> buildRoute<T>({@required String name,
+  Route<T> buildRoute<T>({
+    @required String name,
     Object arguments,
-    bool fullscreenDialog}) {
+    bool fullscreenDialog,
+  }) {
     WidgetBuilder builder = routes[name];
     assert(builder != null);
     return MaterialPageRoute<T>(
       builder: builder,
       settings: RouteSettings(name: name, arguments: arguments),
-      fullscreenDialog: fullscreenDialog ?? false,);
+      fullscreenDialog: fullscreenDialog ?? false,
+    );
   }
 
   @optionalTypeArgs
-  Future<T> push<T extends Object>(
-      {@required String name, Object arguments, bool fullscreenDialog}) {
+  Future<T> push<T extends Object>({
+    @required String name,
+    Object arguments,
+    bool fullscreenDialog,
+  }) {
     return navigatorState.push(buildRoute<T>(
       name: name,
       arguments: arguments,
@@ -32,10 +38,12 @@ class FlutterNavCtrl implements StackNav {
   }
 
   @optionalTypeArgs
-  Future<T> pushAndRemoveUntil<T extends Object>({@required String name,
+  Future<T> pushAndRemoveUntil<T extends Object>({
+    @required String name,
     @required String until,
     Object arguments,
-    bool fullscreenDialog}) {
+    bool fullscreenDialog,
+  }) {
     return navigatorState.pushAndRemoveUntil(
       buildRoute<T>(
         name: name,
