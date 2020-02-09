@@ -1,19 +1,11 @@
 import 'package:flutter/widgets.dart';
-import 'package:fluttered/nav_ctrl/nav_ctrl.dart';
 
 class CurrentRouteNavObserver extends RouteObserver<Route> {
-  NavCtrl ctrl;
 
-  CurrentRouteNavObserver(this.ctrl);
+  CurrentRouteNavObserver();
 
   void navTo(Route<dynamic> route) {
-    final settings = route?.settings;
-    if (settings != null) {
-      ctrl.navTo(
-        settings.name,
-        settings.arguments is Map ? settings.arguments : const {},
-      );
-    }
+
   }
 
   void didPush(Route<dynamic> route, Route<dynamic> previousRoute) {

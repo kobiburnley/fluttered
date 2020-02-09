@@ -6,20 +6,9 @@ class NavCtrl {
 
   NavCtrl(this.state);
 
-  void navTo(String route, [Map<String, String> data = const {}, bool inherit = false]) {
+  void navTo(String route) {
     runInAction(() {
       state.route = route;
-
-      if (inherit) {
-        state.data.addAll(data);
-      } else {
-        state.data = data;
-      }
     });
-  }
-
-
-  String get(String key) {
-    return state.get(key);
   }
 }
