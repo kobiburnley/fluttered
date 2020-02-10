@@ -1,3 +1,4 @@
+// ignore: implementation_imports
 import 'package:dartla_util/src/universal_resource/query_result.dart' as Universal;
 
 class QueryResult<T> implements Universal.QueryResult<T> {
