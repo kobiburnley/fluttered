@@ -8,8 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mobx: any
-  flutter_mobx: any
+  mobx: ^1.0.2
+  flutter_mobx: ^1.0.1
   dartla_util:
     git:
       url: 'https://github.com/kobiburnley/dartla-util'

@@ -11,7 +11,8 @@ class PreviewList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         child,
-        ButtonTheme.bar(
+        ButtonBarTheme(
+          data: ButtonBarThemeData(),
           // make buttons use the appropriate styles for cards
           child: ButtonBar(
             children: <Widget>[
