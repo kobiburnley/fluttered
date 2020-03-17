@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
 
 class CurrentRouteNavObserver extends RouteObserver<Route> {
+  Route<dynamic> currentRoute;
 
   CurrentRouteNavObserver();
 
   void navTo(Route<dynamic> route) {
-
+    currentRoute = route;
   }
 
   void didPush(Route<dynamic> route, Route<dynamic> previousRoute) {

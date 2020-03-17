@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 
 abstract class StackNav {
+
+  String get route;
+
   Future<T> push<T extends Object>({
     @required String name,
     Object arguments,

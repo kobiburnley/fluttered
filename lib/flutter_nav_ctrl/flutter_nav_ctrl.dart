@@ -2,13 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fluttered/current_route_nav_observer/current_route_nav_observer.dart';
 import 'package:fluttered/nav_ctrl/stack_nav.dart';
 
 class FlutterNavCtrl implements StackNav {
   final NavigatorState navigatorState;
+  final CurrentRouteNavObserver routeObserver;
   final Map<String, WidgetBuilder> routes;
 
-  FlutterNavCtrl(this.navigatorState, this.routes);
+  FlutterNavCtrl(
+      {@required this.navigatorState, @required this.routes, @required this.routeObserver});
 
   Route<T> buildRoute<T>({
     @required String name,
@@ -50,7 +53,7 @@ class FlutterNavCtrl implements StackNav {
         arguments: arguments,
         fullscreenDialog: fullscreenDialog,
       ),
-      ModalRoute.withName(name),
+      ModalRoute.withName(until),
     );
   }
 
@@ -62,4 +65,6 @@ class FlutterNavCtrl implements StackNav {
   void popUntil(String name) {
     navigatorState.popUntil(ModalRoute.withName(name));
   }
+
+  String get route => routeObserver.currentRoute.settings.name;
 }
