@@ -22,6 +22,13 @@ class SelectCtrl<T> {
     });
   }
 
+  void remove(T t) {
+    runInAction(() {
+      String id = idGetter(t);
+      state.remove(id);
+    });
+  }
+
   void selectOne(T t) {
     runInAction(() {
       String id = idGetter(t);
