@@ -5,23 +5,28 @@ import 'package:flutter/widgets.dart';
 import 'package:fluttered/current_route_nav_observer/current_route_nav_observer.dart';
 import 'package:fluttered/nav_ctrl/stack_nav.dart';
 
+typedef RouteWidgetBuilder = Widget Function(BuildContext context, Object args);
+
 class FlutterNavCtrl implements StackNav {
   final NavigatorState navigatorState;
   final CurrentRouteNavObserver routeObserver;
-  final Map<String, WidgetBuilder> routes;
+  final Map<String, RouteWidgetBuilder> routes;
 
-  FlutterNavCtrl(
-      {@required this.navigatorState, @required this.routes, @required this.routeObserver});
+  FlutterNavCtrl({
+    @required this.navigatorState,
+    @required this.routes,
+    @required this.routeObserver,
+  });
 
   Route<T> buildRoute<T>({
     @required String name,
     Object arguments,
     bool fullscreenDialog,
   }) {
-    WidgetBuilder builder = routes[name];
+    RouteWidgetBuilder builder = routes[name];
     assert(builder != null);
     return MaterialPageRoute<T>(
-      builder: builder,
+      builder: (context) => builder(context, arguments),
       settings: RouteSettings(name: name, arguments: arguments),
       fullscreenDialog: fullscreenDialog ?? false,
     );

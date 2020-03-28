@@ -11,12 +11,17 @@ class SelectBrowseCtrl<T> {
   BrowseCtrl<T> browse;
   SelectCtrl<T> select;
 
-  SelectBrowseCtrl(
-      {@required this.state, @required this.browse, @required this.select});
+  SelectBrowseCtrl({
+    @required this.state,
+    @required this.browse,
+    @required this.select,
+  });
 
-  factory SelectBrowseCtrl.empty({@required SelectBrowseState<T> state,
+  factory SelectBrowseCtrl.empty({
+    @required SelectBrowseState<T> state,
     @required Future<QueryResult<T>> Function() fetchData,
-    @required String Function(T t) idGetter}) {
+    @required String Function(T t) idGetter,
+  }) {
     final browse = BrowseCtrl<T>(state: state.browse, fetchData: fetchData);
 
     final select = SelectCtrl(state: state.select, idGetter: idGetter);
@@ -26,7 +31,7 @@ class SelectBrowseCtrl<T> {
 
   void selectIndex(int index) {
     final records = browse.state.queryResult.records;
-    if(index >= 0 && index < records.length) {
+    if (index >= 0 && index < records.length) {
       select.single(records.elementAt(index));
     }
   }
