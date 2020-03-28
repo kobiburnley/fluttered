@@ -9,4 +9,6 @@ class SelectStateBase<T> {
   Map<String, T> selected;
 
   SelectStateBase({@required this.selected});
+
+  SelectStateBase.empty() : this(selected: {});
 }
