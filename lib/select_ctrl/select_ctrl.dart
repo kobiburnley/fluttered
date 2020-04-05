@@ -36,6 +36,16 @@ class SelectCtrl<T> {
     });
   }
 
+  void addFirst(T value) {
+    runInAction(() {
+      Map<String, T> newMap = {
+        idGetter(value): value
+      };
+      newMap.addAll(state.selected);
+      state.selected = newMap;
+    });
+  }
+
   void select(Iterable<T> items) {
     runInAction(() {
       final selected = state.selected.values.toList();
