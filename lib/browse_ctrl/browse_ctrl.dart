@@ -32,6 +32,18 @@ class BrowseCtrl<T> {
     load();
   }
 
+  Future<void> refreshSync() async {
+    try {
+      final result = await fetchData();
+      runInAction(() {
+        state.queryResult.applyResult(result);
+      });
+    } catch (e, s) {
+      print(e);
+      print(s);
+    }
+  }
+
   Future<Null> load() async {
     runInAction(() {
       state.fetchState = FetchState.loading;

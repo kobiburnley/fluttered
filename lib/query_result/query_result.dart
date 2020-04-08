@@ -26,4 +26,10 @@ class QueryResult<T> implements Universal.QueryResult<T> {
       ..total = total + other.total
       ..records.addAll(other.records);
   }
+
+  QueryResult<T> applyResult(QueryResult<T> result) {
+    return this
+      ..total = result.total
+      ..records = result.records;
+  }
 }
