@@ -7,14 +7,17 @@ import 'package:fluttered/message/message.dart';
 import 'package:fluttered/nav_ctrl/stack_nav.dart';
 
 typedef RouteWidgetBuilder = Widget Function(
-    BuildContext context, FlutterNavCtrl nav, Object args);
+    BuildContext context,
+    FlutterNavCtrl nav,
+    Object args,
+    );
 
 class FlutterNavCtrl implements StackNav {
   final NavigatorState navigatorState;
   final CurrentRouteNavObserver routeObserver;
   final Map<String, RouteWidgetBuilder> routes;
 
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> scaffoldKey;
 
   FlutterNavCtrl({
     @required this.navigatorState,
@@ -85,8 +88,7 @@ class FlutterNavCtrl implements StackNav {
   }
 
   void showSnackBar(Message message) {
-    final scaffoldState = scaffoldKey.currentState;
-    print('showSnackBar');
+    final scaffoldState = scaffoldKey?.currentState;
     if (scaffoldState != null) {
       scaffoldState.showSnackBar(SnackBar(
         backgroundColor: message.type == MessageType.warning
