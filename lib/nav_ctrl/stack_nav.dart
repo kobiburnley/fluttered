@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fluttered/message/message.dart';
 import 'package:meta/meta.dart';
 
 abstract class StackNav {
@@ -22,4 +23,6 @@ abstract class StackNav {
     Object arguments,
     bool fullscreenDialog,
   });
+
+  void showSnackBar(Message message);
 }
