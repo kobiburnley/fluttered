@@ -29,19 +29,19 @@ class _RefreshIndicatorObserverState extends State<RefreshIndicatorObserver> {
   ReactionDisposer reactionDisposer;
   bool fromUser = false;
 
+  void showIndicatorEffect(bool show) {
+    if (show && completer == null && !fromUser) {
+      completer = Completer();
+      _key.currentState.show();
+    } else if (completer != null) {
+      completer.complete();
+      completer = null;
+    }
+  }
+
   void initState() {
     super.initState();
-
-    reactionDisposer = reaction(widget.predicate, (show) {
-      // show=true && not showing already
-      if (show && completer == null && !fromUser) {
-        completer = Completer();
-        _key.currentState.show();
-      } else if (completer != null) {
-        completer.complete();
-        completer = null;
-      }
-    });
+    reactionDisposer = reaction(widget.predicate, showIndicatorEffect);
   }
 
   void dispose() {
