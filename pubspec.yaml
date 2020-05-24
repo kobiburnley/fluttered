@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mobx: ^1.1.1
+  mobx: ^1.2.1
   flutter_mobx: ^1.1.0
   dartla_util:
     git: git://github.com/kobiburnley/dartla-util.git
